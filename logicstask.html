@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOGICS TASK</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#eee;padding:6px}
+h1{text-align:center;font-size:16px;margin-bottom:6px}
+.container{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.card{border:1px solid #333;border-radius:4px;background:#fff;padding:7px}
+.card h3{font-size:11px;margin-bottom:4px}
+label{font-size:9px}
+input{width:100%;height:19px;border:1px solid #888;border-radius:3px;padding:2px 4px;font-size:10px;margin:1px 0 3px}
+button{background:#6a28d6;color:#fff;border:none;padding:3px 8px;border-radius:3px;font-size:10px;cursor:pointer;margin:3px 0}
+.result{border:1px solid #888;border-radius:3px;min-height:18px;padding:2px 4px;font-size:10px;background:#fff}
+</style>
+</head>
+<body>
+<h1>LOGICS TASK</h1>
+<div class="container">
+
+<div class="card"><h3>1.Average of Three Numbers</h3><label>Number 1</label><input id="a1" type="number"><label>Number 2</label><input id="b1" type="number"><label>Number 3</label><input id="c1" type="number"><button onclick="f1()">Average</button><div id="res1" class="result"></div></div>
+
+<div class="card"><h3>2.Average Using Dom</h3><label>Number 1</label><input id="a2" type="number"><label>Number 2</label><input id="b2" type="number"><label>Number 3</label><input id="c2" type="number"><button onclick="f2()">Average</button><div id="res2" class="result"></div></div>
+
+<div class="card"><h3>3.Sum of First n Natural Numbers</h3><label>Enter Number</label><input id="n3" type="number"><button onclick="f3()">Calculate</button><div id="res3" class="result"></div></div>
+
+<div class="card"><h3>4.Average of First n Natural Numbers</h3><label>Enter Number</label><input id="n4" type="number"><button onclick="f4()">Average</button><div id="res4" class="result"></div></div>
+
+<div class="card"><h3>5.Profit Percentage</h3><label>Selling Price</label><input id="sp5" type="number"><label>Cost Price</label><input id="cp5" type="number"><button onclick="f5()">Calculate</button><div id="res5" class="result"></div></div>
+
+<div class="card"><h3>6.Simple Interest</h3><label>Principal</label><input id="p6" type="number" value="500"><label>Time</label><input id="t6" type="number" value="2"><label>Rate</label><input id="rate6" type="number" value="5"><button onclick="f6()">Interest</button><div id="res6" class="result"></div></div>
+
+<div class="card"><h3>7.Missing Angle of Triangle</h3><label>Angle 1</label><input id="ang1" type="number"><label>Angle 2</label><input id="ang2" type="number"><button onclick="f7()">Calculate</button><div id="res7" class="result"></div></div>
+
+<div class="card"><h3>8.Last Digit of a Number</h3><label>Enter Number</label><input id="n8" type="number"><button onclick="f8()">Last Digit</button><div id="res8" class="result"></div></div>
+
+<div class="card"><h3>9.Remove Last Digit</h3><label>Enter Number</label><input id="n9" type="number"><button onclick="f9()">Remove</button><div id="res9" class="result"></div></div>
+
+<div class="card"><h3>10.First Digit of 3-Digit Number</h3><label>Enter Number</label><input id="n10" type="number"><button onclick="f10()">First Digit</button><div id="res10" class="result"></div></div>
+
+<div class="card"><h3>11.First Digit of 5-Digit Number</h3><label>Enter Number</label><input id="n11" type="number"><button onclick="f11()">First Digit</button><div id="res11" class="result"></div></div>
+
+<div class="card"><h3>12.Celsius → Fahrenheit</h3><label>Enter Celsius</label><input id="c12" type="number"><button onclick="f12()">Convert</button><div id="res12" class="result"></div></div>
+
+<div class="card"><h3>13.Fahrenheit → Celsius</h3><label>Enter Fahrenheit</label><input id="f13" type="number"><button onclick="f13()">Convert</button><div id="res13" class="result"></div></div>
+
+<div class="card"><h3>14.Gross Salary</h3><label>Basic</label><input id="basic14" type="number"><label>HRA</label><input id="hra14" type="number"><label>DA</label><input id="da14" type="number"><button onclick="f14()">Gross</button><div id="res14" class="result"></div></div>
+
+<div class="card"><h3>15.Swap with Third Variable</h3><label>A</label><input id="a15" type="number"><label>B</label><input id="b15" type="number"><button onclick="f15()">Swap</button><div id="res15" class="result"></div></div>
+
+<div class="card"><h3>16.Swap without Third Variable</h3><label>A</label><input id="a16" type="number"><label>B</label><input id="b16" type="number"><button onclick="f16()">Swap</button><div id="res16" class="result"></div></div>
+
+</div>
+<script>
+function f1(){let a=+document.getElementById('a1').value,b=+document.getElementById('b1').value,c=+document.getElementById('c1').value;document.getElementById('res1').innerHTML='Average = '+(a+b+c)/3}
+function f2(){let a=+document.getElementById('a2').value,b=+document.getElementById('b2').value,c=+document.getElementById('c2').value;document.getElementById('res2').innerHTML='Average = '+(a+b+c)/3}
+function f3(){let n=+document.getElementById('n3').value;document.getElementById('res3').innerHTML='Sum = '+n*(n+1)/2}
+function f4(){let n=+document.getElementById('n4').value;document.getElementById('res4').innerHTML='Avg = '+(n+1)/2}
+function f5(){let sp=+document.getElementById('sp5').value,cp=+document.getElementById('cp5').value;document.getElementById('res5').innerHTML='Profit% = '+((sp-cp)/cp*100)}
+function f6(){let p=+document.getElementById('p6').value,t=+document.getElementById('t6').value,r=+document.getElementById('rate6').value;let si=(p*t*r)/100;document.getElementById('res6').innerHTML='SI = '+si}
+function f7(){let a1=+document.getElementById('ang1').value,a2=+document.getElementById('ang2').value;document.getElementById('res7').innerHTML='Angle3 = '+(180-a1-a2)}
+function f8(){let n=Math.abs(+document.getElementById('n8').value);document.getElementById('res8').innerHTML='Last = '+(n%10)}
+function f9(){let n=+document.getElementById('n9').value;document.getElementById('res9').innerHTML='Result = '+Math.trunc(n/10)}
+function f10(){let n=Math.abs(+document.getElementById('n10').value);document.getElementById('res10').innerHTML='First = '+Math.trunc(n/100)}
+function f11(){let n=Math.abs(+document.getElementById('n11').value);document.getElementById('res11').innerHTML='First = '+Math.trunc(n/10000)}
+function f12(){let c=+document.getElementById('c12').value;document.getElementById('res12').innerHTML='F = '+((c*9/5)+32)}
+function f13(){let f=+document.getElementById('f13').value;document.getElementById('res13').innerHTML='C = '+((f-32)*5/9).toFixed(2)}
+function f14(){let b=+document.getElementById('basic14').value,h=+document.getElementById('hra14').value,d=+document.getElementById('da14').value;document.getElementById('res14').innerHTML='Gross = '+(b+h+d)}
+function f15(){let a=+document.getElementById('a15').value,b=+document.getElementById('b15').value;let temp=a;a=b;b=temp;document.getElementById('res15').innerHTML='A='+a+', B='+b}
+function f16(){let a=+document.getElementById('a16').value,b=+document.getElementById('b16').value;a=a+b;b=a-b;a=a-b;document.getElementById('res16').innerHTML='A='+a+', B='+b}
+</script>
+</body>
+</html>

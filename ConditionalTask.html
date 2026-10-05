@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JS Conditional Statements </title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#f0f0f0;padding:8px}
+h1{text-align:center;font-size:18px;margin-bottom:8px}
+h2{font-size:13px;margin:12px 4px 6px;color:#fff;padding:4px 10px;border-radius:4px;width:fit-content}
+.h-if{background:#2e7d32} .h-else{background:#1565c0} .h-ladder{background:#6a1b9a}
+.container{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.card{border:1.2px solid #333;border-radius:5px;background:#fff;padding:8px}
+.card h3{font-size:11px;margin-bottom:5px}
+label{font-size:9px;display:block;margin-top:3px}
+input{width:100%;height:20px;border:1px solid #888;border-radius:3px;padding:2px 5px;font-size:10px;margin-top:1px}
+button{border:none;padding:3px 10px;border-radius:3px;color:#fff;font-size:10px;margin:5px 0;cursor:pointer}
+.if button{background:#2e7d32} .else button{background:#1565c0} .ladder button{background:#6a1b9a}
+.result{border:1px solid #999;min-height:18px;border-radius:3px;padding:3px 5px;font-size:10px;background:#fafafa}
+.level{font-size:8px;padding:1px 5px;border-radius:10px;color:#fff;margin-left:5px}
+.easy{background:#4caf50} .medium{background:#ff9800} .hard{background:#f44336}
+@media(max-width:900px){.container{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<h1>📘 JS Conditional Statements</h1>
+
+<h2 class="h-if">🔹 if 6 Examples</h2>
+<div class="container">
+
+<div class="card if"><h3>1. Positive Number <span class="level easy">Easy</span></h3><label>Enter Number</label><input id="if1" type="number" placeholder="Ex: 5"><button onclick="if1()">Check</button><div id="r_if1" class="result"></div></div>
+
+<div class="card if"><h3>2. Eligible to Vote <span class="level easy">Easy</span></h3><label>Enter Age</label><input id="if2" type="number" placeholder="Ex: 20"><button onclick="if2()">Check</button><div id="r_if2" class="result"></div></div>
+
+<div class="card if"><h3>3. Divisible by 5 <span class="level medium">Medium</span></h3><label>Enter Number</label><input id="if3" type="number"><button onclick="if3()">Check</button><div id="r_if3" class="result"></div></div>
+
+<div class="card if"><h3>4. Hot Day Alert <span class="level medium">Medium</span></h3><label>Temperature °C</label><input id="if4" type="number"><button onclick="if4()">Check</button><div id="r_if4" class="result"></div></div>
+
+<div class="card if"><h3>5. Distinction Check <span class="level medium">Medium</span></h3><label>Marks (0-100)</label><input id="if5" type="number"><button onclick="if5()">Check</button><div id="r_if5" class="result"></div></div>
+
+<div class="card if"><h3>6. Account Locked <span class="level hard">Hard</span></h3><label>Failed Attempts</label><input id="if6" type="number"><button onclick="if6()">Check</button><div id="r_if6" class="result"></div></div>
+
+</div>
+
+<h2 class="h-else">🔹 if...else 6 Examples</h2>
+<div class="container">
+
+<div class="card else"><h3>1. Odd or Even <span class="level easy">Easy</span></h3><label>Enter Number</label><input id="el1" type="number"><button onclick="el1()">Check</button><div id="r_el1" class="result"></div></div>
+
+<div class="card else"><h3>2. Pass or Fail <span class="level easy">Easy</span></h3><label>Marks</label><input id="el2" type="number"><button onclick="el2()">Result</button><div id="r_el2" class="result"></div></div>
+
+<div class="card else"><h3>3. Adult or Minor <span class="level easy">Easy</span></h3><label>Age</label><input id="el3" type="number"><button onclick="el3()">Check</button><div id="r_el3" class="result"></div></div>
+
+<div class="card else"><h3>4. Discount Eligible <span class="level medium">Medium</span></h3><label>Bill Amount</label><input id="el4" type="number"><button onclick="el4()">Check Discount</button><div id="r_el4" class="result"></div></div>
+
+<div class="card else"><h3>5. Positive / Negative <span class="level medium">Medium</span></h3><label>Enter Number</label><input id="el5" type="number"><button onclick="el5()">Check</button><div id="r_el5" class="result"></div></div>
+
+<div class="card else"><h3>6. Login Check <span class="level hard">Hard</span></h3><label>Password</label><input id="el6" type="text" placeholder="Enter: admin123"><button onclick="el6()">Login</button><div id="r_el6" class="result"></div></div>
+
+</div>
+
+<h2 class="h-ladder">🔹 if...else if 6 Examples</h2>
+<div class="container">
+
+<div class="card ladder"><h3>1. Student Grade <span class="level easy">Easy</span></h3><label>Marks</label><input id="lad1" type="number"><button onclick="lad1()">Grade</button><div id="r_lad1" class="result"></div></div>
+
+<div class="card ladder"><h3>2. Age Group <span class="level easy">Easy</span></h3><label>Age</label><input id="lad2" type="number"><button onclick="lad2()">Category</button><div id="r_lad2" class="result"></div></div>
+
+<div class="card ladder"><h3>3. Traffic Light <span class="level medium">Medium</span></h3><label>Color (red/yellow/green)</label><input id="lad3" type="text"><button onclick="lad3()">Action</button><div id="r_lad3" class="result"></div></div>
+
+<div class="card ladder"><h3>4. Weather Condition <span class="level medium">Medium</span></h3><label>Temp °C</label><input id="lad4" type="number"><button onclick="lad4()">Weather</button><div id="r_lad4" class="result"></div></div>
+
+<div class="card ladder"><h3>5. BMI Category <span class="level hard">Hard</span></h3><label>BMI Value</label><input id="lad5" type="number"><button onclick="lad5()">BMI Status</button><div id="r_lad5" class="result"></div></div>
+
+<div class="card ladder"><h3>6. Electricity Bill <span class="level hard">Hard</span></h3><label>Units Consumed</label><input id="lad6" type="number"><button onclick="lad6()">Calculate</button><div id="r_lad6" class="result"></div></div>
+
+</div>
+
+<script>
+// IF - 6
+function if1(){let n=+document.getElementById('if1').value;let r=document.getElementById('r_if1');r.innerHTML='';if(n>0) r.innerHTML='✅ '+n+' is Positive Number';}
+function if2(){let a=+document.getElementById('if2').value;let r=document.getElementById('r_if2');r.innerHTML='';if(a>=18) r.innerHTML='✅ Eligible to Vote';}
+function if3(){let n=+document.getElementById('if3').value;let r=document.getElementById('r_if3');r.innerHTML='';if(n%5==0) r.innerHTML='✅ Divisible by 5';}
+function if4(){let t=+document.getElementById('if4').value;let r=document.getElementById('r_if4');r.innerHTML='';if(t>30) r.innerHTML='🔥 Hot Day! Drink Water';}
+function if5(){let m=+document.getElementById('if5').value;let r=document.getElementById('r_if5');r.innerHTML='';if(m>90 && m<=100) r.innerHTML='🌟 Distinction! Excellent';}
+function if6(){let a=+document.getElementById('if6').value;let r=document.getElementById('r_if6');r.innerHTML='';if(a>=3) r.innerHTML='❌ Account Locked! Contact Admin';}
+
+// IF ELSE - 6
+function el1(){let n=+document.getElementById('el1').value;document.getElementById('r_el1').innerHTML=(n%2==0)?'Even Number':'Odd Number';}
+function el2(){let m=+document.getElementById('el2').value;document.getElementById('r_el2').innerHTML=(m>=35)?'✅ Pass':'❌ Fail';}
+function el3(){let a=+document.getElementById('el3').value;document.getElementById('r_el3').innerHTML=(a>=18)?'Adult':'Minor';}
+function el4(){let b=+document.getElementById('el4').value;if(b>1000) document.getElementById('r_el4').innerHTML='🎉 10% Discount Applied'; else document.getElementById('r_el4').innerHTML='No Discount (Bill >1000 needed)';}
+function el5(){let n=+document.getElementById('el5').value;if(n>=0) document.getElementById('r_el5').innerHTML='Positive or Zero'; else document.getElementById('r_el5').innerHTML='Negative Number';}
+function el6(){let p=document.getElementById('el6').value;if(p==='admin123') document.getElementById('r_el6').innerHTML='✅ Login Success'; else document.getElementById('r_el6').innerHTML='❌ Wrong Password';}
+
+// ELSE IF - 6
+function lad1(){let m=+document.getElementById('lad1').value;let r='';if(m>=90) r='A Grade'; else if(m>=75) r='B Grade'; else if(m>=60) r='C Grade'; else if(m>=35) r='D Grade'; else r='Fail'; document.getElementById('r_lad1').innerHTML=r;}
+function lad2(){let a=+document.getElementById('lad2').value;let r='';if(a<=12) r='Child'; else if(a<=19) r='Teenager'; else if(a<=59) r='Adult'; else r='Senior'; document.getElementById('r_lad2').innerHTML=r;}
+function lad3(){let c=document.getElementById('lad3').value.toLowerCase();let r='';if(c=='red') r='🔴 STOP'; else if(c=='yellow') r='🟡 READY'; else if(c=='green') r='🟢 GO'; else r='Invalid Color'; document.getElementById('r_lad3').innerHTML=r;}
+function lad4(){let t=+document.getElementById('lad4').value;let r='';if(t<=10) r='❄️ Cold'; else if(t<=25) r='☁️ Moderate'; else if(t<=35) r='☀️ Warm'; else r='🔥 Very Hot'; document.getElementById('r_lad4').innerHTML=r;}
+function lad5(){let b=+document.getElementById('lad5').value;let r='';if(b<18.5) r='Underweight'; else if(b<24.9) r='Normal'; else if(b<29.9) r='Overweight'; else r='Obese'; document.getElementById('r_lad5').innerHTML=r;}
+function lad6(){let u=+document.getElementById('lad6').value;let bill=0;if(u<=100) bill=u*5; else if(u<=200) bill=100*5+(u-100)*7; else if(u<=300) bill=100*5+100*7+(u-200)*10; else bill=100*5+100*7+100*10+(u-300)*12; document.getElementById('r_lad6').innerHTML='Bill = ₹'+bill;}
+</script>
+</body>
+</html>
